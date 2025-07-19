@@ -11,33 +11,40 @@
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="gname"
+                                    <input type="text" class="form-control border-0" id="gname" maxlength="100"
                                         placeholder="Gurdian Name">
                                     <label for="gname">First Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cage"
+                                    <input type="text" class="form-control border-0" id="cage" maxlength="100"
                                         placeholder="Child Age">
                                     <label for="cage">Last Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="gmail"
+                                    <input type="email" class="form-control border-0" id="gmail" maxlength="200"
                                         placeholder="Gurdian Email">
                                     <label for="gmail">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cname"
+                                    <input type="number" class="form-control border-0" id="name" maxlength="15"
                                         placeholder="Child Name">
-                                    <label for="cname">Your Mobile</label>
+                                    <label for="cname">Your Phone Number</label>
                                 </div>
                             </div>
-
+                            <div class="col-sm-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-0" id="address" maxlength="200"
+                                        placeholder="Your Address" style="height: 100px;">
+                                    </textarea>
+                                    <label for="address">Your Address</label>
+                                </div>
+                            </div>
 
                             <div class="col-12 text-center">
                                 <button class="btn btn-primary py-3 px-4" type="submit">Create Account</button>
