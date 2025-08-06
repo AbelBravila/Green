@@ -8,6 +8,17 @@
 
     <!-- Template Stylesheet -->
     <link href="/back/css/style.css" rel="stylesheet">
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <!-- Quote Start -->
     <div class="container-fluid py-5">
         <div class="container">
@@ -17,54 +28,66 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="fullname" maxlength="50"
-                                        placeholder="fullname">
-                                    <label for="fullname">Full Name</label>
+                        <form method="POST" action="{{ route('register.usuario') }}">
+                            @csrf
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="fullname"
+                                            name="NOMBRE" maxlength="50" placeholder="fullname"
+                                            value="{{ old('NOMBRE') }}">
+                                        <label for="fullname">Full Name</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="email" maxlength="200"
-                                        placeholder="email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="telephone" maxlength="12"
-                                        placeholder="telephone">
-                                    <label for="telephone">Your Phone Number</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0" id="address" maxlength="200" placeholder="Your Address" style="height: 60px;">
-                                    </textarea>
-                                    <label for="address">Your Address</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control border-0" id="password" maxlength="15"
-                                        placeholder="Password">
-                                    <label for="password">Your Password</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control border-0" id="password_confirmation"
-                                        maxlength="15" placeholder="password_confirmation">
-                                    <label for="password_confirmation"></label>
-                                </div>
-                            </div>
 
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Create Account</button>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control border-0" id="email"
+                                            name="CORREO" maxlength="75" placeholder="email"
+                                            value="{{ old('CORREO') }}">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+
+                                <!-- Teléfono y dirección si los usas en el modelo -->
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control border-0" id="telephone"
+                                            name="TELEFONO" maxlength="15" placeholder="telephone"
+                                            value="{{ old('TELEFONO') }}">
+                                        <label for="telephone">Your Phone Number</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" id="address" name="DIRECCION" maxlength="200" placeholder="Your Address"
+                                            style="height: 60px;">{{ old('DIRECCION') }}</textarea>
+                                        <label for="address">Your Address</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control border-0" id="password"
+                                            name="password" maxlength="15" placeholder="Password">
+                                        <label for="password">Your Password</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control border-0" id="password_confirmation"
+                                            name="password_confirmation" maxlength="15" placeholder="Confirm Password">
+                                        <label for="password_confirmation">Confirm Password</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary py-3 px-4" type="submit">Create Account</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

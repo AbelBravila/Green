@@ -14,4 +14,8 @@ class HomeController extends Controller
     {
         return view('app.front.about');
     }
+    public function dashboard()
+    {
+        return view('app.front.dashboard');
+    }
 }

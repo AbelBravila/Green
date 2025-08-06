@@ -9,6 +9,9 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class Usuario
@@ -30,8 +33,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Usuario extends Model
+class Usuario extends Authenticatable implements MustVerifyEmail
 {
+	use Notifiable;
 	protected $table = 'usuario';
 	protected $primaryKey = 'ID_USUARIO';
 	public $incrementing = false;
