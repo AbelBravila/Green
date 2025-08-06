@@ -1,4 +1,13 @@
-<x-apartados-layout>    
+<x-apartados-layout>
+    <!-- Libraries Stylesheet -->
+    <link href="/back/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/back/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/back/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/back/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/back/css/style.css" rel="stylesheet">
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -16,8 +25,10 @@
                                 <img class="img-fluid" src="img/icon/icon-3.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Landscaping</h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -31,8 +42,10 @@
                                 <img class="img-fluid" src="img/icon/icon-6.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Pruning plants</h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -46,8 +59,10 @@
                                 <img class="img-fluid" src="img/icon/icon-5.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Irrigation & Drainage</h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -61,8 +76,10 @@
                                 <img class="img-fluid" src="img/icon/icon-4.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Garden Maintenance </h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -76,8 +93,10 @@
                                 <img class="img-fluid" src="img/icon/icon-8.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Green Technology</h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -91,8 +110,10 @@
                                 <img class="img-fluid" src="img/icon/icon-2.png" alt="Icon">
                             </div>
                             <h4 class="mb-3">Urban Gardening</h4>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
+                                stet diam sed stet.</p>
+                            <a class="btn btn-sm" href=""><i class="fa fa-plus text-primary me-2"></i>Read
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -100,4 +121,18 @@
         </div>
     </div>
     <!-- Service End -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/back/lib/wow/wow.min.js"></script>
+    <script src="/back/lib/easing/easing.min.js"></script>
+    <script src="/back/lib/waypoints/waypoints.min.js"></script>
+    <script src="/back/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/back/lib/counterup/counterup.min.js"></script>
+    <script src="/back/lib/parallax/parallax.min.js"></script>
+    <script src="/back/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/back/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/back/js/main.js"></script>
 </x-apartados-layout>
