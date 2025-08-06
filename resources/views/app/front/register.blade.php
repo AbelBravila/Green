@@ -11,38 +11,45 @@
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="gname" maxlength="100"
-                                        placeholder="Gurdian Name">
-                                    <label for="gname">First Name</label>
+                                    <input type="text" class="form-control border-0" id="fullname" maxlength="50"
+                                        placeholder="fullname">
+                                    <label for="fullname">Full Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cage" maxlength="100"
-                                        placeholder="Child Age">
-                                    <label for="cage">Last Name</label>
+                                    <input type="email" class="form-control border-0" id="email" maxlength="200"
+                                        placeholder="email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>  
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control border-0" id="telephone" maxlength="12"
+                                        placeholder="telephone">
+                                    <label for="telephone">Your Phone Number</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="gmail" maxlength="200"
-                                        placeholder="Gurdian Email">
-                                    <label for="gmail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-0" id="name" maxlength="15"
-                                        placeholder="Child Name">
-                                    <label for="cname">Your Phone Number</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0" id="address" maxlength="200"
-                                        placeholder="Your Address" style="height: 100px;">
+                                    <textarea class="form-control border-0" id="address" maxlength="200" placeholder="Your Address"
+                                        style="height: 60px;">
                                     </textarea>
                                     <label for="address">Your Address</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control border-0" id="password" maxlength="15"
+                                        placeholder="Password">
+                                    <label for="password">Your Password</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control border-0" id="password_confirmation" maxlength="15"
+                                        placeholder="password_confirmation">
+                                    <label for="password_confirmation"></label>
                                 </div>
                             </div>
 
