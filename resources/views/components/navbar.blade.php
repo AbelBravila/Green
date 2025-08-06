@@ -32,7 +32,8 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
     <a href="{{ route('home.index') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h1 class="m-0">Green Leaf Tree Service LLC</h1>
-        <img src="{{ asset('back/img/LOGOTIPO.jpg') }}" alt="Logo" class="ms-2" style="height: 60px;">
+        <img src="/back/img/LOGOTIPO.jpg" alt="Logo" class="img-fluid ms-2 d-none d-md-block"
+            style="max-height: 60px; height: auto; width: auto;">
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
