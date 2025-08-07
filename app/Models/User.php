@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -23,18 +24,18 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $table = 'usuario';
     protected $primaryKey = 'ID_USUARIO';
     public $incrementing = false;
-	public $timestamps = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'ID_ROL',
-		'NOMBRE',
-		'CORREO',
-		'PASSWORD',
-		'DIRECCION',
-		'TELEFONO',
-		'FECHA_CREACION',
-		'FECHA_MODIFICACION',
-		'ESTADO',
+        'NOMBRE',
+        'CORREO',
+        'PASSWORD',
+        'DIRECCION',
+        'TELEFONO',
+        'FECHA_CREACION',
+        'FECHA_MODIFICACION',
+        'ESTADO',
         'email_verified_at',
     ];
 
@@ -55,33 +56,41 @@ class User extends Authenticatable implements MustVerifyEmail
     protected function casts(): array
     {
         return [
-            	'ID_USUARIO' => 'int',
-                'ID_ROL' => 'int',
-                'FECHA_CREACION' => 'datetime',
-                'FECHA_MODIFICACION' => 'datetime',
-                'email_verified_at' => 'datetime',
+            'ID_USUARIO' => 'int',
+            'ID_ROL' => 'int',
+            'FECHA_CREACION' => 'datetime',
+            'FECHA_MODIFICACION' => 'datetime',
+            'email_verified_at' => 'datetime',
         ];
     }
     public function rol()
-	{
-		return $this->belongsTo(Rol::class, 'ID_ROL');
-	}
+    {
+        return $this->belongsTo(Rol::class, 'ID_ROL');
+    }
 
-	public function configuracions()
-	{
-		return $this->hasMany(Configuracion::class, 'ID_USUARIO');
-	}
+    public function configuracions()
+    {
+        return $this->hasMany(Configuracion::class, 'ID_USUARIO');
+    }
 
-	public function cotizacions()
-	{
-		return $this->hasMany(Cotizacion::class, 'ID_USUARIO');
-	}
-	public function getEmailForVerification()
-	{
-		return $this->CORREO;
-	}
-    	public function getRouteKey()
-	{
-		return $this->ID_USUARIO;
-	}
+    public function cotizacions()
+    {
+        return $this->hasMany(Cotizacion::class, 'ID_USUARIO');
+    }
+    public function getEmailAttribute()
+    {
+        return $this->CORREO;
+    }
+    public function getEmailForVerification()
+    {
+        return $this->CORREO;
+    }
+        public function getKey()
+    {
+        return $this->getAttribute($this->primaryKey); // ID_USUARIO
+    }
+    public function getRouteKey()
+    {
+        return $this->ID_USUARIO;
+    }
 }

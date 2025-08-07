@@ -23,14 +23,13 @@ class LoginController extends Controller
     {
         $data = $request->validate([
             'NOMBRE' => 'required|string|max:50',
-            'CORREO' => 'required|string|email|max:75|unique:usuario',
+            'CORREO' => 'required|string|email|max:75|unique:usuario,CORREO',
             'TELEFONO' => 'required|string|max:15',
             'DIRECCION' => 'required|string|max:255',
             'password' => 'required|string|min:8|confirmed',
-            'password.min' => 'La contraseña debe tener al menos 6 caracteres.',
-            'password.confirmed' => 'Las contraseñas no coinciden.',
         ]);
-        $data = User::create([
+
+        $user = User::create([
             'NOMBRE' => $data['NOMBRE'],
             'CORREO' => $data['CORREO'],
             'TELEFONO' => $data['TELEFONO'],
@@ -41,10 +40,11 @@ class LoginController extends Controller
             'FECHA_MODIFICACION' => now(),
             'ESTADO' => 'A',
         ]);
-        Auth::login($data);
-        event(new Registered($data));
-        
-        return response()->json(['message' => 'Registration successful. Check your email to verify your account.']);
+
+        Auth::login($user);
+
+        event(new Registered($user)); // 🚀 Esto dispara el envío del correo automáticamente
+        return redirect()->route('verification.notice');
     }
 
     public function login(Request $request) {}

@@ -13,26 +13,29 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 
-// Muestra vista "verifica tu correo"
-Route::get('/verify-email', EmailVerificationPromptController::class)
-    ->middleware('auth')
-    ->name('verification.notice');
-
-// Verifica el enlace del email
-Route::get('/verify-email/{id}/{hash}', VerifyEmailController::class)
-    ->middleware(['auth', 'signed', 'throttle:6,1'])
-    ->name('verification.verify');
-
-// Reenvía el correo de verificación
-Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-    ->middleware(['auth', 'throttle:6,1'])
-    ->name('verification.send');
-
-
     
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+// Ruta que recibe el clic desde el correo
+Route::get('/verify-email/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill(); // marca el usuario como verificado
+
+    return redirect('/login'); // o donde quieras redirigirlo
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// Ruta para reenviar el correo
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Correo de verificación reenviado.');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/verifica-tu-correo', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/about', [HomeController::class, 'about'])->name('home.about');
