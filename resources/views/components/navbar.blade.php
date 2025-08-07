@@ -46,7 +46,7 @@
                 </a>
             @endforeach
         </div>
-        <a href="{{ route('login.index') }}" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">
+        <a href="{{ route('login') }}" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">
             Sign In <i class="fa fa-arrow-right ms-3"></i>
         </a>
     </div>

@@ -19,7 +19,7 @@ class LoginController extends Controller
         return view('app.front.register');
     }
 
-    public function register(Request $request)
+ /*   public function register(Request $request)
     {
         $data = $request->validate([
             'NOMBRE' => 'required|string|max:50',
@@ -46,7 +46,7 @@ class LoginController extends Controller
         event(new Registered($user)); // 🚀 Esto dispara el envío del correo automáticamente
         return redirect()->route('verification.notice');
     }
-
+*/
     public function login(Request $request) {}
 
 

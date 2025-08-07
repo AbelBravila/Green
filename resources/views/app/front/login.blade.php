@@ -35,7 +35,7 @@
                                 <button class="btn btn-primary py-3 px-4" type="submit">Submit Now</button>
                             </div>
                             <div class="col-12 text-center">
-                                <p class="mb-0">Don't have an account? <a href="{{ route('register.index') }}">Sign
+                                <p class="mb-0">Don't have an account? <a href="{{ route('register') }}">Sign
                                         Up</a></p>
                             </div>
                         </div>

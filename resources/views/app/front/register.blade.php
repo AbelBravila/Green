@@ -28,7 +28,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <form method="POST" action="{{ route('register.usuario') }}">
+                        <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-sm-6">
