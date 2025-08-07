@@ -36,15 +36,15 @@ use Illuminate\Notifications\Notifiable;
 class Usuario extends Authenticatable implements MustVerifyEmail
 {
 	use Notifiable;
-	protected $table = 'usuario';
+	protected $table = 'USUARIO';
 	protected $primaryKey = 'ID_USUARIO';
+	protected $hidden = ['PASSWORD'];
 	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
 		'ID_USUARIO' => 'int',
 		'ID_ROL' => 'int',
-		'PASSWORD' => 'varbinary',
 		'FECHA_CREACION' => 'datetime',
 		'FECHA_MODIFICACION' => 'datetime'
 	];
@@ -74,5 +74,13 @@ class Usuario extends Authenticatable implements MustVerifyEmail
 	public function cotizacions()
 	{
 		return $this->hasMany(Cotizacion::class, 'ID_USUARIO');
+	}
+	public function getEmailForVerification()
+	{
+		return $this->CORREO;
+	}
+	public function getRouteKey()
+	{
+		return $this->ID_USUARIO;
 	}
 }

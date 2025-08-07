@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
@@ -30,18 +30,21 @@ class LoginController extends Controller
             'password.min' => 'La contraseña debe tener al menos 6 caracteres.',
             'password.confirmed' => 'Las contraseñas no coinciden.',
         ]);
-        $data = Usuario::create([
+        $data = User::create([
             'NOMBRE' => $data['NOMBRE'],
             'CORREO' => $data['CORREO'],
             'TELEFONO' => $data['TELEFONO'],
             'DIRECCION' => $data['DIRECCION'],
-            'password' => Hash::make($data['password']),
-            'ID_ROL' => 2,
+            'PASSWORD' => bcrypt($data['password']),
+            'ID_ROL' => 4,
+            'FECHA_CREACION' => now(),
+            'FECHA_MODIFICACION' => now(),
+            'ESTADO' => 'A',
         ]);
         Auth::login($data);
         event(new Registered($data));
+        
         return response()->json(['message' => 'Registration successful. Check your email to verify your account.']);
-
     }
 
     public function login(Request $request) {}
